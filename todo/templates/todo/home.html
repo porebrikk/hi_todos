@@ -1,8 +1,10 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
-
-<h1>Hi!<br>Simply your todos with me!</h1>
-<button type="button" class="btn btn-primary">Go!</button>
-
+<div class="container-fluid text-center">
+    <h1>Hi!<br>Simply your todos with me!</h1>
+    <a href="{% url 'current_todos' %}">
+        <button type="button" class="btn btn-primary">Go!</button>
+    </a>
+</div>
 {% endblock %}

@@ -1,26 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+          crossorigin="anonymous">
+  </head>
+  <header>
+      <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+              <a class="navbar-brand mx-4" href="#">
+                  <img src="https://getbootstrap.ru/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30"
+                       height="24" class="d-inline-block align-text-top">
+                  hi.todo
+              </a>
+              {% if user.is_authenticated %}
 
-{% if user.is_authenticated %}
+              <ul class="nav justify-content-start">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'create_todos' %}">Create</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'current_todos' %}">Current</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'completed_todos' %}">
+                        Completed</a>
+                  </li>
+              </ul>
+              <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                       <a class="nav-link disabled">Logged In as {{ user.username }}</a>
+                  </li>
+                  <li class="nav-item">
+                      <form action="{% url 'logout_user' %}" method="POST">
+                          {% csrf_token %}
+                          <button class="btn btn-primary">Logout</button>
+                      </form>
+                  </li>
+              </ul>
+              {% else %}
+              <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                      <a href="{% url 'signup_user' %}">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{% url 'login_user' %}">
+                          <button class='btn btn-primary'>Login</button>
+                      </a>
+                  </li>
+              </ul>
+              {% endif %}
+          </div>
+      </nav>
+  </header>
 
-Logged In as {{ user.username }}
+  <body>
+    {% block content %}
 
-<a href="{% url 'create_todos' %}">Create</a>
-<a href="{% url 'current_todos' %}">Current</a>
-<a href="{% url 'completed_todos' %}">Completed</a>
+    {% endblock %}
+  </body>
 
-<form action="{% url 'logout_user' %}" method="POST">
-{% csrf_token %}
-<button type="submit">Logout</button>
-</form>
-
-{% else %}
-
-<a href="{% url 'signup_user' %}">Sign Up</a>
-<a href="{% url 'login_user' %}">Login</a>
-
-{% endif %}
-<br>
-<br>
-
-{% block content %}
-
-{% endblock %}
+</html>

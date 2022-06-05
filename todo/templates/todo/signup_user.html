@@ -1,8 +1,8 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
-<div class="d-flex justify-content-center my-5">
-    <div class="d-inline-flex justify-content-center shadow-lg p-3 mb-5 bg-body rounded">
+<div class="d-flex justify-content-center">
+    <div class="d-inline-flex justify-content-center p-3 mb-5 bg-body rounded sign_up_message">
         <form method="POST">
             <h1 class="text-center">Sign Up</h1>
             <h2 class="text-center">{{ error }}</h2>
@@ -21,7 +21,7 @@
                     <input type="password" name="password2" class="form-control" id="password2">
                 </div>
             <div class="row justify-content-center m-3">
-                <button class="btn btn-primary">Sign Up</button>
+                <button class="btn btn-warning">Sign Up</button>
                 <p class="text-center m-3">If you already have an account, please
                     <a href="{% url 'login_user' %}">login</a>.</p>
             </div>

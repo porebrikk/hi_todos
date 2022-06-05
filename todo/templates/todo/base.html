@@ -9,8 +9,6 @@
     <!-- Bootstrap CSS -->
     <title>hi.todo</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
           crossorigin="anonymous">
@@ -23,9 +21,8 @@
       <nav class="navbar navbar-light custom-bg">
           <div class="container-fluid">
               <a class="navbar-brand mx-4" href="/">
-                  <img src="{% static 'todo/logo_complete.png' %}" alt="" width="30"
-                       height="30" class="d-inline-block">
-                  hi.todo
+                  <img src="{% static 'todo/logo.png' %}" alt="" width="105"
+                       height="45" class="d-inline-block">
               </a>
               {% if user.is_authenticated %}
 
@@ -48,7 +45,7 @@
                   <li class="nav-item">
                       <form action="{% url 'logout_user' %}" method="POST">
                           {% csrf_token %}
-                          <button class="btn btn-primary">Logout</button>
+                          <button class="btn btn-outline-danger"><b>Logout</b></button>
                       </form>
                   </li>
               </ul>
@@ -56,12 +53,12 @@
               <ul class="nav justify-content-end">
                   <li class="nav-item">
                       <a href="{% url 'signup_user' %}">
-                          <button class='btn btn-primary mx-1'>Sign Up</button>
+                          <button class='btn btn-outline-warning mx-1'><b>Sign Up</b></button>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a href="{% url 'login_user' %}">
-                          <button class='btn btn-primary mx-1'>Login</button>
+                          <button class='btn btn-outline-warning mx-1'><b>Login</b></button>
                       </a>
                   </li>
               </ul>

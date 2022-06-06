@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-y&+^e2z!hzxbm4v7nek6(&=s4!z8w9^$)!=_%1qlx$%rca(z!6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -117,6 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 LOGIN_URL = '/login'
 # Default primary key field type

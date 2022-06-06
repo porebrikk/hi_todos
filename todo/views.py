@@ -102,3 +102,16 @@ def delete_todo(request, todo_pk):
     if request.method == 'POST':
         todo.delete()
         return redirect('current_todos')
+
+@login_required
+def comp_delete_todo(request, todo_pk):
+    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
+    if request.method == 'POST':
+        todo.delete()
+        return redirect('completed_todos')
+
+@login_required
+def cview_back(request, todo_pk):
+    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
+    if request.method == 'POST':
+        return redirect('completed_todos')

@@ -33,4 +33,6 @@ urlpatterns = [
     path('todo/<int:todo_pk>', views.viewtodo, name='viewtodo'),
     path('todo/<int:todo_pk>/complete', views.complete_todo, name='complete_todo'),
     path('todo/<int:todo_pk>/delete', views.delete_todo, name='delete_todo'),
+    path('todo/<int:todo_pk>/cdelete', views.comp_delete_todo, name='comp_delete_todo'),
+    path('todo/<int:todo_pk>/cview_back', views.cview_back, name='cview_back'),
 ]

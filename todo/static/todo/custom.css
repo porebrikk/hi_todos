@@ -160,3 +160,8 @@ footer {
     border-color: RGBA(128,128,128, 0.40) !important;
 
 }
+
+.navbar-toggler {
+    border-color: RGB(0, 0, 0, 0) !important;
+}
+

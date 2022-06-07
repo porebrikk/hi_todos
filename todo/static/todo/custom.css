@@ -163,5 +163,12 @@ footer {
 
 .navbar-toggler {
     border-color: RGB(0, 0, 0, 0) !important;
+    position: fixed;
+    top: 1.5%;
+    right: 1.5%;
 }
 
+.navbar-collapse {
+  -webkit-justify-content: end !important;
+  justify-content: end !important;
+}

@@ -26,7 +26,7 @@
               </a>
               {% if user.is_authenticated %}
 
-              <ul class="navbar-nav collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+              <ul class="navbar-nav collapse collapse-end navbar-collapse justify-content-center navbarSupportedContent">
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'create_todos' %}">Create</a>
                   </li>
@@ -38,7 +38,7 @@
                         Completed</a>
                   </li>
               </ul>
-              <ul class="nav justify-content-end">
+              <ul class="navbar-nav justify-content-end collapse collapse-end navbar-collapse navbarSupportedContent">
                   <li class="nav-item">
                        <a class="nav-link disabled">Logged In as {{ user.username }}</a>
                   </li>
@@ -49,8 +49,8 @@
                       </form>
                   </li>
               </ul>
-              <button class="navbar-toggler navbar-toggler-right justify-content-end" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
+                      data-bs-target=".navbarSupportedContent" aria-controls="navbarSupportedContent"
                       aria-expanded="false" aria-label="Переключатель навигации">
                   <span class="navbar-toggler-icon"></span>
               </button>
